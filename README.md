@@ -81,7 +81,35 @@ If you prefer to build and run the application yourself, follow these steps:
 
 The Mixcloud Desktop App window will open, providing access to Mixcloud's content and features.
 
+
+### 3. Packaging the Application  
+If you wish to distribute your Mixcloud desktop app, Electron Packager can help you package it. Install Electron Packager as a development dependency by running:
+
+    ```bash
+    npm install electron-packager --save-dev
+    ```
+
+Next, update the "scripts" section in package.json as follows:
+
+    ```json
+    "scripts": {
+    "start": "electron .",
+    "package": "electron-packager . --platform=<platform> --arch=<arch> --out=dist --overwrite"
+    }
+    ```
+
+Replace <platform> with your target platform (e.g., win32, darwin, or linux), and <arch> with the target architecture (e.g., x64 or arm64). You can specify multiple platforms and architectures separated by commas if needed.
+
+To package the application, run the following command:
+
+    ```bash
+    npm run package
+    ```
+
+The packaged application files will be placed in the dist directory.
+
 Choose the option that works best for you and start enjoying your favorite music mixes, radio shows, and podcasts directly from your desktop using the Mixcloud Desktop App!
+
   
 ## Contribution
 Contributions to the Mixcloud Desktop App project are welcome. Please read the [Contribution Guidelines](CONTRIBUTING.md) for detailed information on how to contribute.
